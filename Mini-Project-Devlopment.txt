@@ -1,0 +1,12 @@
+#Topic :- It's Musical
+#What To Do:-
+	We are going to create a project about musical instruments 
+	1) we first do some try and error about the api of Wolfram Alfa
+	 For API : https://products.wolframalpha.com/api/
+	 For Code : https://dzone.com/articles/restful-web-service-1https://dzone.com/articles/restful-web-service-1
+		    https://zetcode.com/javaservlet/restclient/	
+	2) we get the info from net and add it into our program.
+	3) MVC Disinging
+		We Should make a landing page as searchmusical.jsp
+		a) searchmusical.jsp has
+		
