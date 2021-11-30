@@ -8,6 +8,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>It's Musical || Search</title>
+<link rel="stylesheet" href="praj.css" />
 </head>
 <body>
 	<br>
