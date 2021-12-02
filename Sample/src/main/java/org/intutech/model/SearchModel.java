@@ -10,11 +10,13 @@ import org.intutech.bean.Source;
 import org.intutech.util.DbUtil;
 
 
+
+
 public class SearchModel {
 	
 	String result;
 	public List<Source> getAll(String search) {
-		System.out.println("It is a model");
+		
 		List<Source> contactList = new ArrayList<Source>();
 		Connection con = DbUtil.getConnection();
 		try {
@@ -29,12 +31,39 @@ public class SearchModel {
 				c.setSound(rs.getString("sound"));
 				c.setDisc(rs.getString("disc"));
 				c.setTag(rs.getString("tag"));
+				
+				System.out.println(rs.getString("img"));
+				System.out.println(rs.getString("sound"));
+				
 				contactList.add(c);
-				System.out.println("it is while loop of model");
+				
 			}
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
 		return contactList;
 	}
+	public boolean Save(Source co) {
+		boolean flag = false;
+		Connection con = DbUtil.getConnection();
+		try {
+			 	PreparedStatement stmt = con.prepareStatement("insert into musical values(?,?,?,?,?,?)");
+			 	stmt.setInt(1, co.getId());
+			 	stmt.setString(2, co.getName());
+			 	stmt.setString(3, co.getImg());
+			 	stmt.setString(4, co.getSound());
+			 	stmt.setString(5, co.getDisc());
+			 	stmt.setString(6, co.getTag());
+			 	int count = stmt.executeUpdate();
+			 	if(count>0) {
+			 		flag = true;
+			 	}
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			DbUtil.closeConnection(con);
+		}
+		return flag;
+	}
+	
 }

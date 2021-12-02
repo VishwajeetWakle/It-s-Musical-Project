@@ -22,9 +22,9 @@ public class ResultMusicalController extends HttpServlet {
 	
 		String search = request.getParameter("search");
 		SearchModel model = new SearchModel();
-		 System.out.println("it is controller");
+		
 		List<Source> details = model.getAll(search);
-		 System.out.println("return to contoller");
+		
 		request.setAttribute("search", search);
 		request.setAttribute("instrumentdetails", details);
 		RequestDispatcher dis = request.getRequestDispatcher("showmusical.jsp");

@@ -18,9 +18,11 @@
 	<h3>Just try with your fav musical instrument</h3><br><br>
 	<div align="center">
 		<form action="result-musical">
-			<input type="text" name="search"><br><br>
+			<input  type="text" name="search" placeholder="Search an instrument..."><br><br>
 			<button type="submit">Search</button>
 		</form>
 	</div>
+	<br>
+	<a href="" id="link">For List Of Instruments</a>
 </body>
 </html>

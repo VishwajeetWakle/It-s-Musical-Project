@@ -17,7 +17,7 @@
      <c:forEach var="details" items="${requestScope.instrumentdetails}">
      <h2>You are search for  ${details.name}</h2>
       <div class="imagebox">
-        <img src="${details.img}" alt="Guitar" />
+        <img src="${details.img}" alt="Image of Instrument" />
         <audio controls>
 				<source src="${details.sound}" type="audio/mp3" >
 			</audio>	
@@ -36,5 +36,6 @@
       </div>
       </c:forEach>
     </div>
+    
   </body>
 </html>

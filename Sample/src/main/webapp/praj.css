@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  padding: 0;
+  padding: 20px;
   box-sizing: border-box;
   font-family: sans-serif;
   background: #00ff9dab;
@@ -41,4 +41,13 @@ a {
   background: rgb(210, 30, 129);
   color: antiquewhite;
   border-radius: 5px;
+}
+#link {
+	position:absolute;
+	right: 20px;
+	height: 35px;
+}
+input{
+	height:20px;
+	width: 150px;
 }
