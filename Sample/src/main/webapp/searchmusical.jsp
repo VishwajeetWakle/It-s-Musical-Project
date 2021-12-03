@@ -16,6 +16,16 @@
 	<br><br>
 	<h3>Here you can get all info about the musical instruments </h3>
 	<h3>Just try with your fav musical instrument</h3><br><br>
+	
+	<div align="center"><br><br>
+	 	 		<c:choose>
+	 			<c:when test="${param.code eq '160'}">
+	 				<div class="alert alert-danger">
+	 					Error. This Instrument Not Found....
+	 				</div>
+	 			</c:when>
+	 		</c:choose>
+	 		</div><br><br>
 	<div align="center">
 		<form action="result-musical">
 			<input  type="text" name="search" placeholder="Search an instrument..."><br><br>
@@ -23,6 +33,6 @@
 		</form>
 	</div>
 	<br>
-	<a href="" id="link">For List Of Instruments</a>
+	<a href="List.jsp" id="link">For List Of Instruments</a>
 </body>
 </html>

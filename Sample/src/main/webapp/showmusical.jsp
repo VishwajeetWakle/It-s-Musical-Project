@@ -36,6 +36,6 @@
       </div>
       </c:forEach>
     </div>
-    
+    	<a href="searchmusical.jsp" id="link">Back</a>
   </body>
 </html>
