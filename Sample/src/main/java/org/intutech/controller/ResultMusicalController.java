@@ -24,12 +24,15 @@ public class ResultMusicalController extends HttpServlet {
 		SearchModel model = new SearchModel();
 		
 		List<Source> details = model.getAll(search);
+		if(details.isEmpty()) {
+			response.sendRedirect("searchmusical.jsp");
+		}else {
 		
 		request.setAttribute("search", search);
 		request.setAttribute("instrumentdetails", details);
 		RequestDispatcher dis = request.getRequestDispatcher("showmusical.jsp");
 		dis.forward(request, response);
-		
+		}
 	}
 
 }
