@@ -10,17 +10,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>${requestScope.search}</title>
     <link rel="stylesheet" href="praj.css" />
+
+    <script>
+      function getImagePath() {
+        return "./" + localStorage.getItem("selectedImage");
+      }
+      document.onload = function () {
+        document.getElementById("someImage").src = getImagePath();
+      };
+    </script>
   </head>
   <body>
+    
+    <div class="Details">
     <h2>It's Musical</h2>
     <div class="box">
      <c:forEach var="details" items="${requestScope.instrumentdetails}">
-     <h2>You are search for  ${details.name}</h2>
+     
+     <div style="width: 20%">
+      <h1>You are search for  ${details.name}</h1>
+    </div>
       <div class="imagebox">
-        <img src="${details.img}" alt="Image of Instrument" />
+        
+        <div class="image_section">
+          <img src="${details.img}" height="600px" class="img_instrument" alt="Image of Instrument" />
+          <img id="./" height="600px" />
+        </div>
         <audio controls>
 				<source src="${details.sound}" type="audio/mp3" >
-			</audio>	
+			  </audio>	
 			<br><br>
       </div>
 
@@ -29,13 +47,21 @@
 
         <p>${details.disc}
         </p>
+        <div class="details-section">
+          ${details.disc}
 
+          
         <a href="${details.tag}"
-          >For More Information
+        >For More Information
         </a>
+        </div>
+      
+
       </div>
       </c:forEach>
     </div>
     	<a href="searchmusical.jsp" id="link">Back</a>
+
+    </div>
   </body>
 </html>

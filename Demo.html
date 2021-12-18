@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="ISO-8859-1" />
+    <title>It's Musical || Search</title>
+    <link rel="stylesheet" href="./Demo.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Welcome to It's Musical</h1>
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#search">Search</a></li>
+          <li><a href="#link">List of Insruments</a></li>
+          <li><a href="">About</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <p>
+        Here you can get all info about the musical instruments Just try with
+        your fav musical instrument
+      </p>
+      <br />
+      <div>
+        <br /><br />
+        <c:choose>
+          <c:when test="${param.code eq '160'}">
+            <div class="alert-danger">
+              <p>Error. This Instrument Not Found....</p>
+            </div>
+          </c:when>
+        </c:choose>
+      </div>
+      <br /><br />
+      <div>
+        <form action="result-musical" id="search">
+          <input
+            type="text"
+            name="search"
+            placeholder="Search an instrument..."
+          /><br /><br />
+          <button type="submit">Search</button>
+        </form>
+      </div>
+    </main>
+    <footer>
+      <a href="List.jsp" id="link">For List Of Instruments</a>
+    </footer>
+
+    <br />
+  </body>
+</html>
